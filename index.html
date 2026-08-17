@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1f2937">
+    <meta name="description" content="Google News PWA - Leggi le ultime notizie">
+    <title>Google News PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231f2937' width='192' height='192'/><text x='96' y='120' font-size='80' fill='white' text-anchor='middle'>📰</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231f2937' width='192' height='192'/><text x='96' y='120' font-size='80' fill='white' text-anchor='middle'>📰</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>📰 Google News</h1>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Cerca notizie..." autocomplete="off">
+                <button id="searchBtn">🔍</button>
+            </div>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-category="top">Top News</button>
+            <button class="tab-btn" data-category="technology">Tecnologia</button>
+            <button class="tab-btn" data-category="business">Business</button>
+            <button class="tab-btn" data-category="health">Salute</button>
+            <button class="tab-btn" data-category="science">Scienza</button>
+        </nav>
+
+        <main>
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Caricamento notizie...</p>
+            </div>
+            <div id="newsList" class="news-list"></div>
+            <div id="error" class="error hidden"></div>
+            <div id="noResults" class="no-results hidden">
+                <p>Nessuna notizia trovata</p>
+            </div>
+        </main>
+
+        <footer>
+            <p>📱 PWA News App | Offline supportato</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
